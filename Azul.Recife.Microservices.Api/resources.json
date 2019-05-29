@@ -1,0 +1,13 @@
+{
+  "resources": [
+    {
+      "key": "MongoDbException",
+      "value": [
+        {
+          "culture": "pt-BR",
+          "value": "Erro de comunicação."
+        }
+      ]
+    }
+  ]
+}
