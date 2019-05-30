@@ -6,12 +6,14 @@ using Azul.Framework.Context;
 using Azul.Framework.Notifications;
 using Azul.Framework.Resource.Interfaces;
 using Azul.Recife.Microservices.Domain.Commands;
-using Azul.Recife.Microservices.Domain.Queries.GetProductsById;
+using Azul.Recife.Microservices.Domain.Commands.v1.AddProduct;
+using Azul.Recife.Microservices.Domain.Queries.v1.GetProducts;
+using Azul.Recife.Microservices.Domain.Queries.v1.GetProductsById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Azul.Recife.Microservice.Controllers
+namespace Azul.Recife.Microservices.Api.Controllers.v1
 {
     /// <summary>
     /// Products Controller
@@ -38,7 +40,17 @@ namespace Azul.Recife.Microservice.Controllers
             : base(loggerFactory, mediatorService, notificationHandler, context, resourceCatalog)
         {
         }
-
+        
+        /// <summary>
+        /// Gets the products.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("api/v1/products")]
+        [ProducesResponseType(typeof(GetProductsByIdResponse), 200)]
+        public async Task<IActionResult> GetProducts()
+        {
+            return await GenerateResponseAsync(async () => await MediatorService.Send(new GetProductsQuery()));
+        }
 
         /// <summary>
         /// Gets the products asynchronous.
@@ -52,12 +64,14 @@ namespace Azul.Recife.Microservice.Controllers
         //[SwaggerDeviceHeader]
         public async Task<IActionResult> GetProductsAsync(int productId)
         {
-            Context.AddDataValue("canal", Request.Headers["canal"].ToString());
-
             return await GenerateResponseAsync(async () => await MediatorService.Send(new GetProductsByIdQuery { ProductId = productId }));
         }
-
-
+        
+        /// <summary>
+        /// Adds the products asynchronous.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns></returns>
         [HttpPost("api/v1/products")]
         [ProducesResponseType(typeof(AddProductCommandResponse), (int)HttpStatusCode.Created)]
         [SwaggerCultureHeader]

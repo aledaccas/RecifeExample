@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ProjectGuid>{CF8C996C-0100-4950-8D57-A22D3B098611}</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azul.Framework.Context" Version="4.0.0" />
+    <PackageReference Include="Azul.Framework.ServiceClient.Http" Version="4.0.1" />
+  </ItemGroup>
+
+</Project>
