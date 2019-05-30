@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace Azul.Recife.Microservices.Domain.Queries.GetProductsById
+namespace Azul.Recife.Microservices.Domain.Queries.v1.GetProductsById
 {
     /// <summary>
     /// GetProductsByIdResponse Class.

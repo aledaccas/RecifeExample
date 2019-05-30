@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Azul.Framework.Cache" Version="4.0.0" />
     <PackageReference Include="Azul.Framework.Domain" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Azul.Recife.Microservices.Services\Azul.Recife.Microservices.Services.csproj" />
   </ItemGroup>
 
 </Project>

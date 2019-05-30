@@ -1,10 +1,10 @@
 ﻿using MediatR;
 using Newtonsoft.Json;
 
-namespace Azul.Recife.Microservices.Domain.Commands
+namespace Azul.Recife.Microservices.Domain.Commands.v1.AddProduct
 {
     /// <summary>
-    /// 
+    /// AddProductCommand Class.
     /// </summary>
     /// <seealso>
     ///     <cref>MediatR.IRequest{Azul.Recife.Microservices.Domain.Commands.AddProductCommandResponse}</cref>

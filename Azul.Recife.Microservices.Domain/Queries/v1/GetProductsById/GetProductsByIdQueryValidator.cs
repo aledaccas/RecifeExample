@@ -1,12 +1,13 @@
-﻿using Azul.Framework.Context;
-using FluentValidation;
+﻿using FluentValidation;
 
-namespace Azul.Recife.Microservices.Domain.Queries.GetProductsById
+namespace Azul.Recife.Microservices.Domain.Queries.v1.GetProductsById
 {
     /// <summary>
     /// GetProductsByIdQueryValidator Class.
     /// </summary>
-    /// <seealso cref="FluentValidation.AbstractValidator{Azul.Recife.Microservices.Domain.Queries.GetProductsById.GetProductsByIdQuery}" />
+    /// <seealso>
+    ///     <cref>FluentValidation.AbstractValidator{Azul.Recife.Microservices.Domain.Queries.GetProductsById.GetProductsByIdQuery}</cref>
+    /// </seealso>
     public class GetProductsByIdQueryValidator : AbstractValidator<GetProductsByIdQuery>
     {
         /// <summary>

@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Azul.Framework.Api" Version="4.0.4" />
     <PackageReference Include="Azul.Framework.Cache.Memory" Version="4.0.0" />
+    <PackageReference Include="Azul.Framework.Cache.Redis" Version="4.0.1" />
     <PackageReference Include="Azul.Framework.Resource.File" Version="4.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
@@ -17,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Azul.Recife.Microservices.Domain\Azul.Recife.Microservices.Domain.csproj" />
+    <ProjectReference Include="..\Azul.Recife.Microservices.Services\Azul.Recife.Microservices.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using MediatR;
+﻿using MediatR;
 using Newtonsoft.Json;
 
-namespace Azul.Recife.Microservices.Domain.Queries.GetProductsById
+namespace Azul.Recife.Microservices.Domain.Queries.v1.GetProductsById
 {
     /// <summary>
     /// GetProductsByIdQuery Class.
     /// </summary>
-    /// <seealso cref="MediatR.IRequest{Azul.Recife.Microservices.Domain.Queries.GetProductsById.GetProductsByIdResponse}" />
+    /// <seealso>
+    ///     <cref>MediatR.IRequest{Azul.Recife.Microservices.Domain.Queries.GetProductsById.GetProductsByIdResponse}</cref>
+    /// </seealso>
     public class GetProductsByIdQuery : IRequest<GetProductsByIdResponse>
     {
         /// <summary>
