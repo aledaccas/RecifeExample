@@ -1,11 +1,15 @@
 {
   "resources": [
     {
-      "key": "MongoDbException",
+      "key": "ProductDoesNotExist",
       "value": [
         {
           "culture": "pt-BR",
-          "value": "Erro de comunicação."
+          "value": "Produto não encontrado."
+        },
+        {
+          "culture": "en-US",
+          "value": "Product does not exist."
         }
       ]
     }

@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ProjectGuid>{C5460E9A-1B79-46DC-976A-E5575B58B58F}</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azul.Framework.Events" Version="4.0.4" />
+  </ItemGroup>
+
+</Project>
