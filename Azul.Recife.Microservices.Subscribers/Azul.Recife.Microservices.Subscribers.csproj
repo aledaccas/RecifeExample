@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ProjectGuid>{CA02044B-97D5-4664-9948-039715582704}</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azul.Framework.Events" Version="4.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Azul.Recife.Microservices.Domain\Azul.Recife.Microservices.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

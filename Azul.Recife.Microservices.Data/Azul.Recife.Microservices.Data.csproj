@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ProjectGuid>{796F41FC-4A86-43A2-86C4-17FEAB12D485}</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azul.Framework.Data.MongoDb" Version="4.0.0" />
+    <PackageReference Include="Azul.Framework.Extensions" Version="4.0.0" />
+  </ItemGroup>
+
+</Project>

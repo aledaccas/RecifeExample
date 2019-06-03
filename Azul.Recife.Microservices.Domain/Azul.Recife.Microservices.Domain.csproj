@@ -7,11 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
     <PackageReference Include="Azul.Framework.Cache" Version="4.0.0" />
     <PackageReference Include="Azul.Framework.Domain" Version="4.0.0" />
+    <PackageReference Include="Azul.Framework.Events" Version="4.0.4" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Azul.Recife.Microservices.Data\Azul.Recife.Microservices.Data.csproj" />
+    <ProjectReference Include="..\Azul.Recife.Microservices.Exceptions\Azul.Recife.Microservices.Exceptions.csproj" />
+    <ProjectReference Include="..\Azul.Recife.Microservices.Publishers\Azul.Recife.Microservices.Publishers.csproj" />
     <ProjectReference Include="..\Azul.Recife.Microservices.Services\Azul.Recife.Microservices.Services.csproj" />
   </ItemGroup>
 
