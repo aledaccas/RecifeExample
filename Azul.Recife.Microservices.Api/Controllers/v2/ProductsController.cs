@@ -9,6 +9,7 @@ using Azul.Framework.Resource.Interfaces;
 using Azul.Recife.Microservices.Domain.Commands.v2.AddProduct;
 using Azul.Recife.Microservices.Domain.Commands.v2.ChangeProductPrice;
 using Azul.Recife.Microservices.Domain.Queries.v2.GetProducts;
+using Azul.Recife.Microservices.Domain.Queries.v2.GetProductsComments;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -32,15 +33,15 @@ namespace Azul.Recife.Microservices.Api.Controllers.v2
         /// <param name="notificationHandler">The notification handler.</param>
         /// <param name="context">The context.</param>
         /// <param name="resourceCatalog">The resource catalog.</param>
-        public ProductsController(ILoggerFactory loggerFactory, 
-                                  IMediator mediatorService, 
-                                  INotificationHandler notificationHandler, 
-                                  IContext context, 
-                                  IResourceCatalog resourceCatalog) 
+        public ProductsController(ILoggerFactory loggerFactory,
+                                  IMediator mediatorService,
+                                  INotificationHandler notificationHandler,
+                                  IContext context,
+                                  IResourceCatalog resourceCatalog)
             : base(loggerFactory, mediatorService, notificationHandler, context, resourceCatalog)
         {
         }
-        
+
         /// <summary>
         /// Adds the products asynchronous.
         /// </summary>
@@ -73,11 +74,22 @@ namespace Azul.Recife.Microservices.Api.Controllers.v2
         /// <param name="price">The price.</param>
         /// <returns></returns>
         [HttpPut("api/v2/products/{productId}/price")]
-        [ProducesResponseType(typeof(GetProductsByIdResponse), 200)]
-        public async Task<IActionResult> ChangeProductPrice(string productId , string price)
+        [ProducesResponseType(typeof(bool), 200)]
+        public async Task<IActionResult> ChangeProductPrice(string productId, string price)
         {
-            var command = new ChangeProductPriceCommand {Id = productId, Amount = double.Parse(price)};
+            var command = new ChangeProductPriceCommand { Id = productId, Amount = double.Parse(price) };
             return await GenerateResponseAsync(async () => await MediatorService.Send(command));
+        }
+
+        /// <summary>
+        /// Gets the products comments.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("api/v2/products/{productId}/comments")]
+        [ProducesResponseType(typeof(GetProductsCommentsResponse), 200)]
+        public async Task<IActionResult> GetProductsComments(string productId)
+        {
+            return await GenerateResponseAsync(async () => await MediatorService.Send(new GetProductsCommentsQuery { ProductId = productId }));
         }
     }
 }

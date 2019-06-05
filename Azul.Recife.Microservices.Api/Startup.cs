@@ -1,5 +1,10 @@
-﻿using Azul.Framework.Api.Startup;
+﻿using System;
+using Azul.Framework.Api.Startup;
+using Azul.Framework.Events;
+using Azul.Framework.Events.Extensions;
+using Azul.Framework.Extensions;
 using Azul.Recife.Microservices.Api.Ioc;
+using Azul.Recife.Microservices.Subscribers.ProductCommentAdded;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -39,6 +44,7 @@ namespace Azul.Recife.Microservices.Api
         {
             base.Configure(app, env);
             app.UseMvc();
+            DependencyInjectionContainer.StartSubscribers();
         }
     }
 }

@@ -1,7 +1,9 @@
-﻿using Azul.Framework.Api.Ioc;
+﻿using System.Linq;
+using Azul.Framework.Api.Ioc;
 using Azul.Framework.Api.Pipelines;
 using Azul.Framework.Cache;
 using Azul.Framework.Cache.Memory;
+using Azul.Framework.Events;
 using Azul.Framework.Events.Extensions;
 using Azul.Framework.Resource.File;
 using Azul.Framework.Resource.Interfaces;
@@ -38,6 +40,7 @@ namespace Azul.Recife.Microservices.Api.Ioc
             InjectMediator(container, typeof(GetProductsByIdQuery).Assembly);
             InjectServices(container);
             InjectRepositories(container);
+
             container.RegisterPublishers(typeof(ProductPriceChangedPublisher).Assembly);
             container.RegisterSubscribers(typeof(ProductCommentAddedSubscriber).Assembly);
         }
@@ -67,8 +70,6 @@ namespace Azul.Recife.Microservices.Api.Ioc
         private void InjectRepositories(Container container)
         {
             container.Register<IProductRepository>(() => new ProductRepository("Products", "recconnection"), Lifestyle.Singleton);
-
-
         }
     }
 }
