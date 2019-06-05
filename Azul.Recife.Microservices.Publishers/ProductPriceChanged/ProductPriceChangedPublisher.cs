@@ -25,7 +25,7 @@ namespace Azul.Recife.Microservices.Publishers.ProductPriceChanged
         /// <value>
         /// The connection identifier.
         /// </value>
-        public override string ConnectionId => "localRabbitMq";
+        public override string ConnectionId => "localAzureBus";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductPriceChangedPublisher"/> class.

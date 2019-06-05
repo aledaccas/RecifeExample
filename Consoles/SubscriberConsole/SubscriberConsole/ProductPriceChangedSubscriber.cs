@@ -3,19 +3,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Azul.Framework.Events;
-using Azul.Recife.Microservices.Domain.Commands.v2.AddComment;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace Azul.Recife.Microservices.Subscribers.ProductCommentAdded
+namespace SubscriberConsole
 {
-    /// <summary>
-    /// Consumes the event of a product comment added.
-    /// </summary>
-    /// <seealso>
-    ///     <cref>Azul.Framework.Events.EventSubscriber{Azul.Recife.Microservices.Events.Subscribers.ProductCommentAdded.ProductCommentAddedMessage}</cref>
-    /// </seealso>
-    public class ProductCommentAddedSubscriber : EventSubscriber<ProductCommentAddedMessage>
+    public class ProductPriceChangedSubscriber : EventSubscriber<ProductPriceChangedMessage>
     {
         /// <summary>
         /// Gets the name of the topic.
@@ -23,7 +16,7 @@ namespace Azul.Recife.Microservices.Subscribers.ProductCommentAdded
         /// <value>
         /// The name of the topic.
         /// </value>
-        public override string TopicName => "ProductCommentAdded";
+        public override string TopicName => "productpricechanged";
 
         /// <summary>
         /// Gets the name of the subscription.
@@ -31,7 +24,7 @@ namespace Azul.Recife.Microservices.Subscribers.ProductCommentAdded
         /// <value>
         /// The name of the subscription.
         /// </value>
-        public override string SubscriptionName => "AzulRecifeMicroservices";
+        public override string SubscriptionName => "SubscriberConsole";
 
         /// <summary>
         /// Gets the connection identifier.
@@ -42,12 +35,12 @@ namespace Azul.Recife.Microservices.Subscribers.ProductCommentAdded
         public override string ConnectionId => "localAzureBus";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProductCommentAddedSubscriber"/> class.
+        /// Initializes a new instance of the <see cref="ProductPriceChangedSubscriber"/> class.
         /// </summary>
         /// <param name="mediator"></param>
         /// <param name="loggerFactory"></param>
         /// <param name="mapper"></param>
-        public ProductCommentAddedSubscriber(IMediator mediator,
+        public ProductPriceChangedSubscriber(IMediator mediator,
                                              ILoggerFactory loggerFactory,
                                              IMapper mapper) : base(mediator, loggerFactory, mapper)
         {
@@ -59,17 +52,19 @@ namespace Azul.Recife.Microservices.Subscribers.ProductCommentAdded
         /// <param name="message">The message to be consumed.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public override async Task<bool> ConsumeAsync(Event<ProductCommentAddedMessage> message, CancellationToken cancellationToken)
+        public override async Task<bool> ConsumeAsync(Event<ProductPriceChangedMessage> message, CancellationToken cancellationToken)
         {
             try
             {
-                var command = MapperService.Map<AddCommentCommand>(message.EventData);
-                return await MediatorService.Send(command, cancellationToken);
+                await Task.Run(() => 
+                    Console.WriteLine($"Price of product {message.EventData.Id} has changed. New price is {message.EventData.Amount}"),
+                    cancellationToken);
+                return true;
             }
             catch (Exception ex)
             {
-                LogService.LogError(ex, $"Error consuming message. AggregationId: {message.AggregationId}, EventId: {message.EventId}");
-                return false;
+                Console.WriteLine($"Error consuming message. Exception: {ex}");
+                return true;
             }
         }
     }
