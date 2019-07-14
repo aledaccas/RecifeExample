@@ -44,7 +44,7 @@ namespace Azul.Recife.Microservices.Api
         {
             base.Configure(app, env);
             app.UseMvc();
-            DependencyInjectionContainer.StartSubscribers();
+            DependencyInjectionContainer.StartPublishersAndSubscribers();
         }
     }
 }

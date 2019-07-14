@@ -9,7 +9,9 @@ namespace Azul.Recife.Microservices.Data.Repositories.Products.Entities
     /// <summary>
     /// Product class.
     /// </summary>
-    /// <seealso cref="Azul.Framework.Data.Entities.DataMappingBase{MongoDB.Bson.ObjectId}" />
+    /// <seealso>
+    ///     <cref>Azul.Framework.Data.Entities.DataMappingBase{MongoDB.Bson.ObjectId}</cref>
+    /// </seealso>
     public class Product : DataMappingBase<ObjectId>
     {
         /// <summary>

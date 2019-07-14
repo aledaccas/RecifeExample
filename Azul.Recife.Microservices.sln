@@ -23,11 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Tests", "5. Tests", "{61
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Azul.Recife.Microservices.Tests", "Azul.Recife.Microservices.Tests\Azul.Recife.Microservices.Tests.csproj", "{3D1400C2-880B-4101-B3D7-580C73E54720}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azul.Recife.Microservices.Publishers", "Azul.Recife.Microservices.Publishers\Azul.Recife.Microservices.Publishers.csproj", "{1145DF9D-EA6A-4709-97A9-585E83A34E39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Azul.Recife.Microservices.Publishers", "Azul.Recife.Microservices.Publishers\Azul.Recife.Microservices.Publishers.csproj", "{C5460E9A-1B79-46DC-976A-E5575B58B58F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azul.Recife.Microservices.Subscribers", "Azul.Recife.Microservices.Subscribers\Azul.Recife.Microservices.Subscribers.csproj", "{FBB9E865-BE2B-41B2-8F10-EC79D0DE384B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Azul.Recife.Microservices.Subscribers", "Azul.Recife.Microservices.Subscribers\Azul.Recife.Microservices.Subscribers.csproj", "{CA02044B-97D5-4664-9948-039715582704}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azul.Recife.Microservices.Exceptions", "Azul.Recife.Microservices.Exceptions\Azul.Recife.Microservices.Exceptions.csproj", "{2FB650F3-5DD6-4123-AD44-CEA58B4D924D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Azul.Recife.Microservices.Exceptions", "Azul.Recife.Microservices.Exceptions\Azul.Recife.Microservices.Exceptions.csproj", "{2FB650F3-5DD6-4123-AD44-CEA58B4D924D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,14 +55,14 @@ Global
 		{3D1400C2-880B-4101-B3D7-580C73E54720}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D1400C2-880B-4101-B3D7-580C73E54720}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D1400C2-880B-4101-B3D7-580C73E54720}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1145DF9D-EA6A-4709-97A9-585E83A34E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1145DF9D-EA6A-4709-97A9-585E83A34E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1145DF9D-EA6A-4709-97A9-585E83A34E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1145DF9D-EA6A-4709-97A9-585E83A34E39}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FBB9E865-BE2B-41B2-8F10-EC79D0DE384B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FBB9E865-BE2B-41B2-8F10-EC79D0DE384B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FBB9E865-BE2B-41B2-8F10-EC79D0DE384B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FBB9E865-BE2B-41B2-8F10-EC79D0DE384B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5460E9A-1B79-46DC-976A-E5575B58B58F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5460E9A-1B79-46DC-976A-E5575B58B58F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5460E9A-1B79-46DC-976A-E5575B58B58F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5460E9A-1B79-46DC-976A-E5575B58B58F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA02044B-97D5-4664-9948-039715582704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA02044B-97D5-4664-9948-039715582704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA02044B-97D5-4664-9948-039715582704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA02044B-97D5-4664-9948-039715582704}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2FB650F3-5DD6-4123-AD44-CEA58B4D924D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2FB650F3-5DD6-4123-AD44-CEA58B4D924D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FB650F3-5DD6-4123-AD44-CEA58B4D924D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -77,8 +77,8 @@ Global
 		{CF8C996C-0100-4950-8D57-A22D3B098611} = {671A2BC7-FE5C-451D-947A-0D807F50B908}
 		{796F41FC-4A86-43A2-86C4-17FEAB12D485} = {671A2BC7-FE5C-451D-947A-0D807F50B908}
 		{3D1400C2-880B-4101-B3D7-580C73E54720} = {61D7A493-2526-48CA-AFA5-AFFB1DC56A8F}
-		{1145DF9D-EA6A-4709-97A9-585E83A34E39} = {671A2BC7-FE5C-451D-947A-0D807F50B908}
-		{FBB9E865-BE2B-41B2-8F10-EC79D0DE384B} = {671A2BC7-FE5C-451D-947A-0D807F50B908}
+		{C5460E9A-1B79-46DC-976A-E5575B58B58F} = {671A2BC7-FE5C-451D-947A-0D807F50B908}
+		{CA02044B-97D5-4664-9948-039715582704} = {671A2BC7-FE5C-451D-947A-0D807F50B908}
 		{2FB650F3-5DD6-4123-AD44-CEA58B4D924D} = {DB7AFE78-D904-431C-9193-8333955C38DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

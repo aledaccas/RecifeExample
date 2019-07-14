@@ -7,10 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="7.0.1" />
-    <PackageReference Include="Azul.Framework.Cache" Version="4.0.0" />
-    <PackageReference Include="Azul.Framework.Domain" Version="4.0.0" />
-    <PackageReference Include="Azul.Framework.Events" Version="4.0.9" />
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
+    <PackageReference Include="Azul.Framework.Cache" Version="4.3.0" />
+    <PackageReference Include="Azul.Framework.Domain" Version="4.3.1" />
+    <PackageReference Include="Azul.Framework.Events" Version="4.3.1" />
   </ItemGroup>
 
   <ItemGroup>

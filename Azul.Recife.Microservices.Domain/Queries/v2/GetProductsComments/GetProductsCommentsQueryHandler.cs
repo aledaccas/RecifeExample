@@ -62,9 +62,6 @@ namespace Azul.Recife.Microservices.Domain.Queries.v2.GetProductsComments
                 return new GetProductsCommentsResponse {Comments = _mapper.Map<List<Comment>>(product.Comments)};
             }
             throw new ProductDoesNotExistException();
-
-
-
         }
     }
 }
