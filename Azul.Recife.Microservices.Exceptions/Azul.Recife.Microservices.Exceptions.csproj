@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azul.Framework.Api" Version="4.0.4" />
-    <PackageReference Include="Azul.Framework.Exceptions" Version="4.0.0" />
+    <PackageReference Include="Azul.Framework.Api" Version="4.3.6" />
+    <PackageReference Include="Azul.Framework.Exceptions" Version="4.3.0" />
   </ItemGroup>
 
 </Project>

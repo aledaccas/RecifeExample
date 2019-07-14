@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -57,18 +58,18 @@ namespace Azul.Recife.Microservices.Subscribers.ProductCommentAdded
         /// Consumes the message from  subscription asynchronous.
         /// </summary>
         /// <param name="message">The message to be consumed.</param>
+        /// <param name="headers">The custom headers of message.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public override async Task<bool> ConsumeAsync(Event<ProductCommentAddedMessage> message, CancellationToken cancellationToken)
+        public override async Task<bool> ConsumeAsync(ProductCommentAddedMessage message, IDictionary<string, object> headers, CancellationToken cancellationToken)
         {
             try
             {
-                var command = MapperService.Map<AddCommentCommand>(message.EventData);
+                var command = MapperService.Map<AddCommentCommand>(message);
                 return await MediatorService.Send(command, cancellationToken);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                LogService.LogError(ex, $"Error consuming message. AggregationId: {message.AggregationId}, EventId: {message.EventId}");
                 return false;
             }
         }

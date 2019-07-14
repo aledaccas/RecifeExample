@@ -6,11 +6,16 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningsAsErrors>NU1605</WarningsAsErrors>
+    <NoWarn>1701;1702;NU1603</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="AutoFixture.AutoNSubstitute" Version="4.9.0" />
-    <PackageReference Include="Azul.Framework.Domain" Version="4.0.0" />
-    <PackageReference Include="Azul.Framework.Test" Version="4.0.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.1.1" />
+    <PackageReference Include="AutoFixture.AutoNSubstitute" Version="4.11.0" />
+    <PackageReference Include="Azul.Framework.Domain" Version="4.3.1" />
+    <PackageReference Include="Azul.Framework.Test" Version="4.3.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="nunit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
   </ItemGroup>

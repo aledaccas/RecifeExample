@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azul.Framework.Events" Version="4.0.9" />
+    <PackageReference Include="Azul.Framework.Events" Version="4.3.1" />
   </ItemGroup>
 
   <ItemGroup>

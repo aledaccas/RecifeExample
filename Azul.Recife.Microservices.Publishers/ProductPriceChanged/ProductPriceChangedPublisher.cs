@@ -1,5 +1,4 @@
 ﻿using Azul.Framework.Events;
-using Microsoft.Extensions.Logging;
 
 namespace Azul.Recife.Microservices.Publishers.ProductPriceChanged
 {
@@ -26,13 +25,5 @@ namespace Azul.Recife.Microservices.Publishers.ProductPriceChanged
         /// The connection identifier.
         /// </value>
         public override string ConnectionId => "localAzureBus";
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProductPriceChangedPublisher"/> class.
-        /// </summary>
-        /// <param name="loggerFactory"></param>
-        public ProductPriceChangedPublisher(ILoggerFactory loggerFactory) : base(loggerFactory)
-        {
-        }
     }
 }

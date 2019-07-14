@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Azul.Recife.Microservices.Data.Repositories.Products.Entities;
 using Azul.Recife.Microservices.Domain.Commands.v2.AddProduct;
+using Azul.Recife.Microservices.Domain.Commands.v2.ChangeProductPrice;
+using Azul.Recife.Microservices.Publishers.ProductPriceChanged;
 
 namespace Azul.Recife.Microservices.Domain.MapperProfiles
 {
@@ -16,7 +18,9 @@ namespace Azul.Recife.Microservices.Domain.MapperProfiles
         public AddProductCommandProductProfile()
         {
             CreateMap<AddProductCommand, Product>(MemberList.None)
-                .ConstructUsingServiceLocator();
+                .ConstructUsingServiceLocator().ForMember(dst => dst.Comments, src => src.Ignore());
+            CreateMap<ChangeProductPriceCommand, ProductPriceChangedMessage>().ConstructUsingServiceLocator();
+            
         }
     }
 }

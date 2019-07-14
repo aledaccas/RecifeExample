@@ -36,7 +36,7 @@ namespace Azul.Recife.Microservices.Api.Ioc
             container.RegisterInstance<IResourceCatalog>(new ResourceFileCatalog(new MemoryCache()));
             container.Register(typeof(IValidator<>), typeof(GetProductsByIdQuery).Assembly, Lifestyle.Singleton);
 
-            InjectAutoMapper(container, typeof(GetProductsByIdQuery).Assembly);
+            InjectAutoMapper(container, typeof(GetProductsByIdQuery).Assembly, typeof(ProductCommentAddedSubscriber).Assembly);
             InjectMediator(container, typeof(GetProductsByIdQuery).Assembly);
             InjectServices(container);
             InjectRepositories(container);
