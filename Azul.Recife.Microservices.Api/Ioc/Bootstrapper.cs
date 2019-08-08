@@ -7,6 +7,8 @@ using Azul.Framework.Events;
 using Azul.Framework.Events.Extensions;
 using Azul.Framework.Resource.File;
 using Azul.Framework.Resource.Interfaces;
+using Azul.Framework.Security.ActiveDirectory;
+using Azul.Framework.Security.Interfaces;
 using Azul.Recife.Microservices.Data.Repositories.Products;
 using Azul.Recife.Microservices.Domain.Queries.v1.GetProductsById;
 using Azul.Recife.Microservices.Publishers.ProductPriceChanged;
@@ -32,7 +34,8 @@ namespace Azul.Recife.Microservices.Api.Ioc
         {
             base.Inject(container);
             container.Register(typeof(ICache), typeof(MemoryCache), Lifestyle.Singleton);
-            container.Register<ICache, MemoryCache>(Lifestyle.Singleton);
+            container.RegisterSingleton<ICache, MemoryCache>();
+            container.RegisterSingleton<IAuthenticationProvider, ActiveDirectoryProvider>();
             container.RegisterInstance<IResourceCatalog>(new ResourceFileCatalog(new MemoryCache()));
             container.Register(typeof(IValidator<>), typeof(GetProductsByIdQuery).Assembly, Lifestyle.Singleton);
 
